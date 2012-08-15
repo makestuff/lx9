@@ -1,6 +1,5 @@
-EESchema Schematic File Version 2  date Wed 15 Aug 2012 11:13:09 BST
+EESchema Schematic File Version 2  date Wed 15 Aug 2012 14:20:27 BST
 LIBS:lx9
-LIBS:lx9-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
