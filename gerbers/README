@@ -1,0 +1,27 @@
+The board is 80mm square, four layers of 1oz copper on FR4 TG130, regular green
+soldermask on top & bottom, silkscreen on top & bottom, non-RoHS HASL surface.
+
+There are four NPTH drills: two on CONN1 & two on CONN3; the rest are PTH.
+
+PCB outline:
+  lx9-PCB_Edges.gbr
+
+Drills:
+  lx9.drl (plated holes)
+  lx9-NPTH.drl (non-plated holes)
+
+Top layer:
+  lx9-Front.gtl (copper)
+  lx9-Mask_Front.gts (soldermask)
+  lx9-SilkS_Front.gto (silkscreen)
+
+Ground layer (nearest the top):
+  lx9-GND.gbr
+
++3.3V layer (nearest the bottom):
+  lx9-3.3V.gbr
+
+Bottom layer:
+  lx9-Back.gbl (copper)
+  lx9-Mask_Back.gbs (soldermask)
+  lx9-SilkS_Back.gbo (silkscreen)
