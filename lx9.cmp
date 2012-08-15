@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Mon 13 Aug 2012 13:46:08 BST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Wed 15 Aug 2012 14:32:28 BST
 
 BeginCmp
 TimeStamp = /50199433;
@@ -260,17 +260,10 @@ IdModule  = MS-SIL2/2.56;
 EndCmp
 
 BeginCmp
-TimeStamp = /50250C3F;
-Reference = J4;
-ValeurCmp = XTAL;
-IdModule  = MS-XTAL/HC49-US;
-EndCmp
-
-BeginCmp
 TimeStamp = /50226C1F;
-Reference = K1;
+Reference = J4;
 ValeurCmp = CONN_3;
-IdModule  = MS-SIL3/2.56;
+IdModule  = MS-XTAL/HC49-US;
 EndCmp
 
 BeginCmp
@@ -404,6 +397,13 @@ TimeStamp = /501E9C00;
 Reference = U4;
 ValeurCmp = 24LC1025;
 IdModule  = MS-SOIC8/N;
+EndCmp
+
+BeginCmp
+TimeStamp = /50250C3F;
+Reference = XTAL1;
+ValeurCmp = XTAL;
+IdModule  = MS-XTAL/HC49-US;
 EndCmp
 
 EndListe

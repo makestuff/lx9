@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 15 Aug 2012 14:20:27 BST
+EESchema Schematic File Version 2  date Wed 15 Aug 2012 14:48:02 BST
 LIBS:lx9
 EELAYER 25  0
 EELAYER END
@@ -1044,10 +1044,10 @@ F 1 "C" H 1800 1950 50  0000 L CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L CONN_2 J4
+L CONN_2 XTAL1
 U 1 1 50250C3F
 P 2300 2150
-F 0 "J4" V 2250 2150 40  0000 C CNN
+F 0 "XTAL1" V 2250 2150 40  0000 C CNN
 F 1 "XTAL" V 2350 2150 40  0000 C CNN
 	1    2300 2150
 	1    0    0    -1  
@@ -1375,10 +1375,10 @@ F 1 "GND" H 1150 1480 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_3 K1
+L CONN_3 J4
 U 1 1 50226C1F
 P 600 1000
-F 0 "K1" V 550 1000 50  0000 C CNN
+F 0 "J4" V 550 1000 50  0000 C CNN
 F 1 "CONN_3" V 650 1000 40  0000 C CNN
 	1    600  1000
 	-1   0    0    1   
