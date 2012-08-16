@@ -1,7 +1,7 @@
 COPYRIGHT & DISCLAIMER
 ----------------------
 
-Copyright (C) 2012 Chris McClelland
+Copyright (C) 2012 MakeStuff (http://makestuff.eu)
 
 This documentation describes Open Hardware and is licensed under the CERN Open
 Hardware Licence v1.1. You may redistribute and modify this documentation under
