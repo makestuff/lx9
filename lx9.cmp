@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Wed 06 Nov 2013 18:48:22 GMT
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Wed 06 Nov 2013 21:05:27 GMT
 
 BeginCmp
 TimeStamp = /50199433;
@@ -390,6 +390,13 @@ TimeStamp = /501E9C00;
 Reference = U4;
 ValeurCmp = 24LC1025;
 IdModule  = MS-SOIC8;
+EndCmp
+
+BeginCmp
+TimeStamp = /527AAE71;
+Reference = U5;
+ValeurCmp = M25P40;
+IdModule  = MS-SOIC8/N;
 EndCmp
 
 BeginCmp
