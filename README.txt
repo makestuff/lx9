@@ -1,20 +1,31 @@
 COPYRIGHT & DISCLAIMER
 ----------------------
 
-Copyright (C) 2012 MakeStuff (http://makestuff.eu)
+Copyright (C) 2013 MakeStuff (http://makestuff.eu)
 
 This documentation describes Open Hardware and is licensed under the CERN Open
-Hardware Licence v1.1. You may redistribute and modify this documentation under
-the terms of the CERN OHL v1.1 (http://ohwr.org/cernohl). This documentation is
-distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY,
-SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN
-OHL v1.1 for applicable conditions.
+Hardware Licence v1.2. You may redistribute and modify this documentation under
+the terms of the CERN OHL v1.2 (http://ohwr.org/cernohl). This documentation is
+distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF
+MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE.
+Please see the CERN OHL v1.2 for applicable conditions.
 
 
-MAKESTUFF LX9 BOARD v1.0
+MAKESTUFF LX9 BOARD v1.1
 ------------------------
 
-This is a small four-layer PCB incorporating:
+Features:
+   * 80mm x 80mm, 4-layer PCB (KiCad-designed).
+   * CERN OHL v1.1 licence.
+   * Xilinx Spartan-6 LX9 FPGA[2].
+   * Uses FPGALink[3] for programming & host communication.
+   * Cypress FX2LP Hi-Speed USB interface (~45 MByte/s: see [4]).
+   * 46 FPGA I/Os on top edge-connector, well-grounded.
+   * SPI-bus and 8 FX2LP I/Os on bottom edge-connector.
+   * 16 MBytes of SDRAM (see [5]).
+   * SD-card slot.
+   * 4 Mbit config flash (~40% free for application data).
+   * Flexible power options.
 
    * A Xilinx Spartan-6 LX9 FPGA
    * A Cypress FX2LP Hi-Speed USB microcontroller
@@ -28,7 +39,7 @@ This is a small four-layer PCB incorporating:
 It is intended to be small enough and cheap enough to be used as a building-
 block for larger FPGA-based projects, and to be solderable at home with the bare
 minimum of tools (i.e no reflow oven, just a decent soldering iron). The
-component cost for a small (e.g 20-off) run comes to about £27 for each board,
+component cost for a small (e.g 10-off) run comes to about $40 for each board,
 including the PCB.
 
 The design files are in KiCad format (http://www.kicad-pcb.org). I used this:
