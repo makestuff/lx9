@@ -15,26 +15,16 @@ MAKESTUFF LX9 BOARD v1.1
 ------------------------
 
 Features:
-   * 80mm x 80mm, 4-layer PCB (KiCad-designed).
-   * CERN OHL v1.1 licence.
-   * Xilinx Spartan-6 LX9 FPGA[2].
-   * Uses FPGALink[3] for programming & host communication.
-   * Cypress FX2LP Hi-Speed USB interface (~45 MByte/s: see [4]).
+   * 80mm x 80mm, 4-layer PCB (KiCad format).
+   * Xilinx Spartan-6 LX9 FPGA[1].
+   * Uses FPGALink[2] for programming & host communication.
+   * Cypress FX2LP Hi-Speed USB interface (~45 MByte/s).
    * 46 FPGA I/Os on top edge-connector, well-grounded.
    * SPI-bus and 8 FX2LP I/Os on bottom edge-connector.
-   * 16 MBytes of SDRAM (see [5]).
+   * 16 MBytes of SDRAM.
    * SD-card slot.
    * 4 Mbit config flash (~40% free for application data).
    * Flexible power options.
-
-   * A Xilinx Spartan-6 LX9 FPGA
-   * A Cypress FX2LP Hi-Speed USB microcontroller
-   * A 16MiB SDRAM, 16 bits wide
-   * An SD-card slot
-   * A well-grounded 80-way 2mm-pitch edge-connector with 47 FPGA I/Os
-   * A second 2mm edge-connector with the FX2LP's port D and the SD card pins
-   * A 1Mib EEPROM for the FX2LP firmware, FPGA design & initialisation data
-   * FPGALink-compatibility
 
 It is intended to be small enough and cheap enough to be used as a building-
 block for larger FPGA-based projects, and to be solderable at home with the bare
@@ -47,3 +37,6 @@ The design files are in KiCad format (http://www.kicad-pcb.org). I used this:
 http://iut-tice.ujf-grenoble.fr/cao/kicad-2012-01-19-BZR3256-stable-UBUNTU_10.10_full_with_components_doc.tgz
 
 ...running on x86_64 Ubuntu 12.04.
+
+[1]http://www.xilinx.com/products/silicon-devices/fpga/spartan-6/lx.htm
+[2]http://www.makestuff.eu/wordpress/software/fpgalink
