@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Wed 06 Nov 2013 21:17:47 GMT
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Thu 07 Nov 2013 23:51:06 GMT
 
 BeginCmp
 TimeStamp = /50199433;
@@ -211,6 +211,13 @@ IdModule  = MS-0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /527ACAF5;
+Reference = C31;
+ValeurCmp = C;
+IdModule  = MS-0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /50251D35;
 Reference = CONN1;
 ValeurCmp = SD-CARD;
@@ -267,6 +274,13 @@ IdModule  = MS-SIL3/2.56;
 EndCmp
 
 BeginCmp
+TimeStamp = /527ACA40;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = MS-0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /5019943B;
 Reference = R2;
 ValeurCmp = R;
@@ -311,6 +325,20 @@ EndCmp
 BeginCmp
 TimeStamp = /5028F317;
 Reference = R8;
+ValeurCmp = R;
+IdModule  = MS-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527ADB04;
+Reference = R9;
+ValeurCmp = R;
+IdModule  = MS-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527C26E3;
+Reference = R10;
 ValeurCmp = R;
 IdModule  = MS-0805;
 EndCmp
