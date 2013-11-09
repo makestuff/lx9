@@ -1,13 +1,12 @@
-EESchema Schematic File Version 2  date Fri 08 Nov 2013 00:24:57 GMT
+EESchema Schematic File Version 2  date Sat 09 Nov 2013 10:20:36 GMT
 LIBS:lx9
-LIBS:lx9-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title "noname.sch"
-Date "7 nov 2013"
+Date "9 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -15,6 +14,54 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 4950 5250 0    60   ~ 0
+fx2PD7
+Text Label 4950 5150 0    60   ~ 0
+fx2PD6
+Text Label 4950 5050 0    60   ~ 0
+fx2PD5
+Text Label 4950 4950 0    60   ~ 0
+fx2PD4
+Text Label 4950 4850 0    60   ~ 0
+fx2PD3
+Text Label 4950 4750 0    60   ~ 0
+fx2PD2
+Text Label 4950 4650 0    60   ~ 0
+fx2PD1
+Text Label 4950 4550 0    60   ~ 0
+fx2PD0
+Text Label 4250 8000 0    60   ~ 0
+ramData_io{15}
+Text Label 4250 7900 0    60   ~ 0
+ramData_io{14}
+Text Label 4250 7800 0    60   ~ 0
+ramData_io{13}
+Text Label 4250 7700 0    60   ~ 0
+ramData_io{12}
+Text Label 4250 7600 0    60   ~ 0
+ramData_io{11}
+Text Label 4250 7500 0    60   ~ 0
+ramData_io{10}
+Text Label 4250 7400 0    60   ~ 0
+ramData_io{9}
+Text Label 4250 7300 0    60   ~ 0
+ramData_io{8}
+Text Label 4250 7200 0    60   ~ 0
+ramData_io{7}
+Text Label 4250 7100 0    60   ~ 0
+ramData_io{6}
+Text Label 4250 6900 0    60   ~ 0
+ramData_io{4}
+Text Label 4250 7000 0    60   ~ 0
+ramData_io{5}
+Text Label 4250 6800 0    60   ~ 0
+ramData_io{3}
+Text Label 4250 6700 0    60   ~ 0
+ramData_io{2}
+Text Label 4250 6600 0    60   ~ 0
+ramData_io{1}
+Text Label 4250 6500 0    60   ~ 0
+ramData_io{0}
 Wire Wire Line
 	13400 3000 13400 3400
 Wire Wire Line
@@ -662,8 +709,6 @@ Connection ~ 12550 9550
 Wire Wire Line
 	12150 2400 12600 2400
 Wire Wire Line
-	12150 2600 12600 2600
-Wire Wire Line
 	2750 3000 3450 3000
 Wire Wire Line
 	3700 3500 3700 3600
@@ -884,7 +929,7 @@ L TEST_POINT TP1
 U 1 1 5028F2DA
 P 3750 3000
 F 0 "TP1" H 3650 2900 60  0000 C CNN
-F 1 "TEST_POINT" H 3350 3000 60  0000 C CNN
+F 1 "CLK" H 3350 3000 60  0000 C CNN
 	1    3750 3000
 	-1   0    0    1   
 $EndComp
@@ -893,25 +938,16 @@ L TEST_POINT TP2
 U 1 1 5028F2A0
 P 3750 3200
 F 0 "TP2" H 3650 3100 60  0000 C CNN
-F 1 "TEST_POINT" H 3350 3200 60  0000 C CNN
+F 1 "FLAGA" H 3350 3200 60  0000 C CNN
 	1    3750 3200
-	-1   0    0    1   
-$EndComp
-$Comp
-L TEST_POINT TP5
-U 1 1 5027F5AB
-P 12900 2600
-F 0 "TP5" H 12100 2500 60  0000 C CNN
-F 1 "TEST_POINT" H 12500 2600 60  0000 C CNN
-	1    12900 2600
 	-1   0    0    1   
 $EndComp
 $Comp
 L TEST_POINT TP4
 U 1 1 5027F5A7
 P 12900 2500
-F 0 "TP4" H 12100 2600 60  0000 C CNN
-F 1 "TEST_POINT" H 12500 2500 60  0000 C CNN
+F 0 "TP4" H 12100 2500 60  0000 C CNN
+F 1 "DONE" H 12500 2500 60  0000 C CNN
 	1    12900 2500
 	-1   0    0    1   
 $EndComp
@@ -920,7 +956,7 @@ L TEST_POINT TP3
 U 1 1 5027F590
 P 12900 2400
 F 0 "TP3" H 12100 2400 60  0000 C CNN
-F 1 "TEST_POINT" H 12500 2400 60  0000 C CNN
+F 1 "PROG" H 12500 2400 60  0000 C CNN
 	1    12900 2400
 	-1   0    0    1   
 $EndComp

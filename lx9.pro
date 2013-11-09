@@ -1,5 +1,5 @@
-update=Wed 15 Aug 2012 11:33:21 BST
-last_client=kicad
+update=Fri 08 Nov 2013 19:22:03 GMT
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -25,6 +25,8 @@ LastNetListRead=lx9.net
 [pcbnew/libraries]
 LibDir=
 LibName1=lx9
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=/home/chris/kicad/libraries
@@ -58,5 +60,3 @@ RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=lx9
-[general]
-version=1

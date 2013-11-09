@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Thu 07 Nov 2013 23:51:06 GMT
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Sat 09 Nov 2013 00:26:42 GMT
 
 BeginCmp
 TimeStamp = /50199433;
@@ -381,13 +381,6 @@ EndCmp
 BeginCmp
 TimeStamp = /5027F5A7;
 Reference = TP4;
-ValeurCmp = TEST_POINT;
-IdModule  = MS-TESTPOINT;
-EndCmp
-
-BeginCmp
-TimeStamp = /5027F5AB;
-Reference = TP5;
 ValeurCmp = TEST_POINT;
 IdModule  = MS-TESTPOINT;
 EndCmp
