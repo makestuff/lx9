@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Sat 09 Nov 2013 00:26:42 GMT
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = Sat 09 Nov 2013 19:43:59 GMT
 
 BeginCmp
 TimeStamp = /50199433;
@@ -234,7 +234,7 @@ EndCmp
 BeginCmp
 TimeStamp = /5021ABF4;
 Reference = CONN3;
-ValeurCmp = μUSB;
+ValeurCmp = USB;
 IdModule  = MS-MINI-USB-B;
 EndCmp
 
@@ -344,6 +344,13 @@ IdModule  = MS-0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /527E8E18;
+Reference = R11;
+ValeurCmp = R;
+IdModule  = MS-0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /502262E1;
 Reference = REG1;
 ValeurCmp = REG3.3;
@@ -360,28 +367,28 @@ EndCmp
 BeginCmp
 TimeStamp = /5028F2DA;
 Reference = TP1;
-ValeurCmp = TEST_POINT;
+ValeurCmp = CLK;
 IdModule  = MS-TESTPOINT;
 EndCmp
 
 BeginCmp
 TimeStamp = /5028F2A0;
 Reference = TP2;
-ValeurCmp = TEST_POINT;
+ValeurCmp = FLAGA;
 IdModule  = MS-TESTPOINT;
 EndCmp
 
 BeginCmp
 TimeStamp = /5027F590;
 Reference = TP3;
-ValeurCmp = TEST_POINT;
+ValeurCmp = PROG;
 IdModule  = MS-TESTPOINT;
 EndCmp
 
 BeginCmp
 TimeStamp = /5027F5A7;
 Reference = TP4;
-ValeurCmp = TEST_POINT;
+ValeurCmp = DONE;
 IdModule  = MS-TESTPOINT;
 EndCmp
 
