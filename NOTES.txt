@@ -42,6 +42,12 @@ NOTES
                  AMIC A43L3616AV-7F
                  ISSI IS42S16400 (64Mbit)
 
+    You can also probably use a 256Mbit SDRAM like K4S561632N, but it has 13
+    address pins, so you'll either have to install a 10K pull-down at R12 (thus
+    only using the bottom half of each bank) or connect a flying wire from the
+    R12 pad near the SDRAM to an available FPGA I/O. Use of a 256Mbit SDRAM is
+    currently untested.
+
 [4] An appropriate mating connector is http://www.ebay.com/itm/180611505374
 
 [5] An appropriate mating connector is hard to find. You could cut from [2].
@@ -170,6 +176,8 @@ JTAG-programming the FPGA every time you power up the board). However, you must
 not omit R5 & R6; these pull up the FX2's I2C bus; the FX2 will not enumerate
 without them.
 
+R12 may be left unpopulated if you used a 64Mbit or 128Mbit SDRAM.
+
 
 SUPPORT TOOLS/HDL/SOFTWARE
 --------------------------
@@ -206,3 +214,11 @@ You can now use the "gordon" tool to load the flash:
   gordon -v 1d50:602b:0002 -t indirect:1 -w your-design.bin:0
 
 The board will subsequently boot into your design on power-up.
+
+There are various HDL applications which may be of interest to you:
+
+  https://github.com/makestuff/blinky
+  https://github.com/makestuff/swled
+  https://github.com/makestuff/readback
+  https://github.com/makestuff/spi-talk
+  https://github.com/makestuff/logic-sampler
