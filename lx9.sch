@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 22 Feb 2014 11:36:26 GMT
+EESchema Schematic File Version 2  date Wed 26 Feb 2014 12:29:30 GMT
 LIBS:lx9
 EELAYER 25  0
 EELAYER END
@@ -6,7 +6,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title "noname.sch"
-Date "22 feb 2014"
+Date "26 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -14,6 +14,19 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 8450 2600 2    60   ~ 0
+SUSPEND
+Text Label 12150 2400 0    60   ~ 0
+PROG
+Text Label 12150 2500 0    60   ~ 0
+DONE
+Text Label 1850 6700 2    60   ~ 0
+CS
+Text Label 1850 6600 2    60   ~ 0
+CKE
+Wire Wire Line
+	1850 9350 3350 9350
+Connection ~ 2750 9350
 Wire Wire Line
 	12150 3400 13400 3400
 Wire Wire Line
@@ -184,16 +197,14 @@ Wire Wire Line
 Connection ~ 3050 6000
 Wire Wire Line
 	3350 6100 3350 6000
-Connection ~ 3250 9250
+Connection ~ 3250 9350
 Wire Wire Line
-	3250 9250 3250 9150
+	3250 9350 3250 9250
+Connection ~ 2850 9350
 Wire Wire Line
-	3050 9350 3050 9150
-Connection ~ 2850 9250
+	2850 9250 2850 9350
 Wire Wire Line
-	2850 9150 2850 9250
-Wire Wire Line
-	2750 9150 2750 9250
+	2750 9350 2750 9250
 Wire Wire Line
 	4250 7200 8450 5900
 Wire Wire Line
@@ -509,16 +520,14 @@ Wire Wire Line
 	2800 8250 3100 8250
 Connection ~ 2950 8250
 Wire Wire Line
-	3350 9150 3350 9250
+	3350 9350 3350 9250
+Connection ~ 3050 9350
 Wire Wire Line
-	3350 9250 2750 9250
-Connection ~ 3050 9250
+	2950 9350 2950 9250
+Connection ~ 2950 9350
 Wire Wire Line
-	2950 9250 2950 9150
-Connection ~ 2950 9250
-Wire Wire Line
-	3150 9250 3150 9150
-Connection ~ 3150 9250
+	3150 9350 3150 9250
+Connection ~ 3150 9350
 Wire Wire Line
 	2750 6000 2750 6100
 Wire Wire Line
@@ -689,6 +698,19 @@ Wire Wire Line
 	13900 3000 14050 3000
 Wire Wire Line
 	14200 5100 14300 5100
+Wire Wire Line
+	3050 9250 3050 9550
+Text Label 1850 8850 2    60   ~ 0
+ramAddr_out{12}
+$Comp
+L R R12
+U 1 1 530DD139
+P 1850 9100
+F 0 "R12" V 1930 9100 50  0000 C CNN
+F 1 "R" V 1850 9100 50  0000 C CNN
+	1    1850 9100
+	-1   0    0    1   
+$EndComp
 $Comp
 L SD-CARD CONN1
 U 1 1 50251D35
@@ -1820,7 +1842,7 @@ F 1 "+3.3V" H 14050 3110 30  0000 C CNN
 $EndComp
 Text Label 12150 3500 0    60   ~ 0
 ramUDQM_out
-Text Label 12150 3600 0    60   ~ 0
+Text Label 12150 4300 0    60   ~ 0
 ramClk_out
 Text Label 1850 6500 2    60   ~ 0
 ramClk_out
@@ -1842,19 +1864,19 @@ Text Label 1850 7950 2    60   ~ 0
 ramAddr_out{3}
 Text Label 1850 7850 2    60   ~ 0
 ramAddr_out{2}
-Text Label 12150 3700 0    60   ~ 0
+Text Label 12150 3600 0    60   ~ 0
 ramAddr_out{11}
-Text Label 12150 3800 0    60   ~ 0
+Text Label 12150 3700 0    60   ~ 0
 ramAddr_out{9}
-Text Label 12150 3900 0    60   ~ 0
+Text Label 12150 3800 0    60   ~ 0
 ramAddr_out{8}
-Text Label 12150 4000 0    60   ~ 0
+Text Label 12150 3900 0    60   ~ 0
 ramAddr_out{7}
-Text Label 12150 4100 0    60   ~ 0
+Text Label 12150 4000 0    60   ~ 0
 ramAddr_out{6}
-Text Label 12150 4200 0    60   ~ 0
+Text Label 12150 4100 0    60   ~ 0
 ramAddr_out{5}
-Text Label 12150 4300 0    60   ~ 0
+Text Label 12150 4200 0    60   ~ 0
 ramAddr_out{4}
 Text Label 12150 4400 0    60   ~ 0
 ramAddr_out{3}
@@ -1909,10 +1931,10 @@ $EndComp
 $Comp
 L GND #PWR045
 U 1 1 501BC941
-P 3050 9350
-F 0 "#PWR045" H 3050 9350 30  0001 C CNN
-F 1 "GND" H 3050 9280 30  0001 C CNN
-	1    3050 9350
+P 3050 9550
+F 0 "#PWR045" H 3050 9550 30  0001 C CNN
+F 1 "GND" H 3050 9480 30  0001 C CNN
+	1    3050 9550
 	1    0    0    -1  
 $EndComp
 $Comp

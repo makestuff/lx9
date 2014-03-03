@@ -1,7 +1,7 @@
 COPYRIGHT & DISCLAIMER
 ----------------------
 
-Copyright (C) 2013 MakeStuff (http://makestuff.eu)
+Copyright (C) 2014 MakeStuff (http://makestuff.eu)
 
 This documentation describes Open Hardware and is licensed under the CERN Open
 Hardware Licence v1.2. You may redistribute and modify this documentation under
@@ -11,7 +11,7 @@ MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE.
 Please see the CERN OHL v1.2 for applicable conditions.
 
 
-MAKESTUFF LX9 BOARD v1.1
+MAKESTUFF LX9 BOARD REV3
 ------------------------
 
 Features:
@@ -34,7 +34,7 @@ including the PCB.
 
 The design files are in KiCad format (http://www.kicad-pcb.org). I used this:
 
-http://iut-tice.ujf-grenoble.fr/cao/kicad-2012-01-19-BZR3256-stable-UBUNTU_10.10_full_with_components_doc.tgz
+http://iut-tice.ujf-grenoble.fr/cao/old_versions/kicad-2012-01-19-BZR3256-stable-UBUNTU_10.10_full_with_components_doc.tgz
 
 ...running on x86_64 Ubuntu 12.04.
 

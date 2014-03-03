@@ -1,0 +1,208 @@
+BILL OF MATERIALS
+-----------------
+
+Qty  Mfg        Part                   Site     Notes  Suggested Source
+1    Xilinx     XC6SLX9-2TQG144C       U1       [1]
+1    Cypress    CY7C68013A-56PVXC      U2       [2]
+1    Micron     MT48LC8M16A2P-7E       U3       [3]
+1    Microchip  24LC128-I/SN           U4              http://uk.rs-online.com/web/p/eeprom-memory-chips/6879089
+1    Micron     M25P40-VMN6            U5              http://uk.rs-online.com/web/p/flash-memory-chips/7824597
+1    HLWCONN    HW-SD-001-02           CONN1           http://www.ebay.com/itm/180794795415 [SU]
+1    -          2x40-pin 2mm header    CONN2    [4]    http://www.ebay.com/itm/170648544414
+1    -          Female Mini-B USB skt  CONN3           http://www.ebay.com/itm/251126968870
+1    -          2x18-pin 2mm header    CONN4    [5]    http://www.ebay.com/itm/170842982073
+1    -          24MHz HC-49/US XTAL    XTAL1           http://www.ebay.com/itm/261078491239
+3    -          2.54mm 2-pin jumper    J1-3     [6]    http://www.ebay.com/itm/170902513437
+1    -          2.54mm 3-pin jumper    J4       [6]                       "
+5    -          22uF EIA3528 tant      C6,9-12  [7]    http://www.ebay.com/itm/160306954443
+2    -          22pF 0805 capacitors   C13-14          http://www.ebay.com/itm/251019275826
+25   -          470nF 0805 capacitors  *        [8]    http://www.ebay.com/itm/251025068518
+4    -          10K 0805 resistors     R1-4,10
+3    -          2.2K 0805 resistors    R5-6,9   [9]
+1    -          0805 resistor          R11      [10]
+2    -          0805 resistor          R7-8     [11]
+1    -          0805 capacitor         C30      [11]
+1    -          AMS1117 SOT-223 3.3V   REG3.3          http://www.ebay.com/itm/170845847551
+1    -          AMS1117 SOT-223 1.2V   REG1.2          http://www.ebay.com/itm/170966438741
+
+
+NOTES
+-----
+
+[1] You can also use an LX4 FPGA: XC6SLX4-2TQG144C
+
+[2] A CY7C68014A-56PVXC will also work, as will the 8KiB CY7C68013-56PVXC, but
+    it's not recommended; I can't guarantee the firmware will stay inside the
+    8KiB limit forever.
+
+[3] Any 64Mbit or 128Mbit SDRAM with the same organization/pinout will suffice.
+    For example: Micron MT48LC8M16A2P-6A or MT48LC8M16A2P-7E,
+                 Samsung K4S281632F-TC(L)-60 or K4S281632F-TC(L)-75
+                 Alliance AS4C8M16S-6TCN or AS4C8M16S-7TCN
+                 AMIC A43L3616AV-7F
+                 ISSI IS42S16400 (64Mbit)
+
+[4] An appropriate mating connector is http://www.ebay.com/itm/180611505374
+
+[5] An appropriate mating connector is hard to find. You could cut from [2].
+
+[6] You can cut 2-pin and 3-pin jumpers from a 40-pin single-row strip.
+
+[7] The actual value and properties aren't too important; 10uF will do too.
+
+[8] These are decoupling capacitors, so their values are not too important.
+    They're located at C1-5,7-8,15-29,31.
+
+[9] R5 & R6 are intended to pull up the SCL & SDA lines of the FX2's I2C bus.
+    The FX2 will not start without them. R9 is a pull-down on M1. This ensures
+    that the FPGA sees M[1:0] = "01", which is interpreted as "master serial".
+    If your FPGA is refusing to boot, the first thing to check is that the M1
+    side of R9 is less than 0.8V (the V[IL] maximum).
+    Ref: Mode pins in Xilinx UG380 table 2.1.
+    Ref: V[IL] maxumum in Xilinx DS162 table 9.
+
+[10] This is a series resistor on FPGA pin 39 (INIT_B), which is an open-drain
+     output during configuration. It will be driven low in the event of a CRC
+     error during configuration. It's up to you to choose an appropriate value,
+     and to design the external hardware connected to P39 appropriately.
+     Ref: Xilinx UG380 table 2.2.
+
+[11] The intent of R7-8 & C30 is to form a voltage-divider between the USB 5V
+     supply and GND, and feed it to the FX2's WAKEUP input, thus allowing it to
+     detect a USB disconnect when the board is in self-powered configuration.
+     For example: http://pastebin.com/raw.php?i=L6LsEW8D
+
+     At the moment, the FPGALink firmware will put the FX2 in suspend mode
+     (stopping the FPGA's IFCLK) if this happens:
+     https://github.com/makestuff/fx2lib/blob/master/fw/fw.c#L81
+
+     You should probably leave R7-8 and C30 unpopulated unless you know what
+     you're doing.
+
+[SU] Seller Unverified. All other suggested sources are "tried and tested".
+     Note that suggested sources are just that: suggestions.
+
+
+POWER OPTIONS
+-------------
+
+There are three power jumpers which allow you to configure how your board is
+powered.
+
+J2: Make the LX9 board's 3.3V rail available on CONN2.
+J3: Use the LX9 board's regulator to power the 3.3V rail.
+J4: Select the 5V rail routing (USB, EXT, ALL, NIL)
+
+J4   J3 J2 
+NIL  N  N    -
+USB  N  N    -
+EXT  N  N    -
+ALL  N  N    -
+
+NIL  Y  N    FPGA powered by CONN2 3.3V
+USB  Y  N    -
+EXT  Y  N    -
+ALL  Y  N    -
+
+NIL  N  Y    -
+USB  N  Y    FPGA powered by USB 5V via onboard 3.3V regulator
+EXT  N  Y    FPGA powered by CONN2 5V via onboard 3.3V regulator
+ALL  N  Y    FPGA powered by USB 5V via onboard 3.3V regulator; USB 5V also supplied to CONN2
+
+NIL  Y  Y    -
+USB  Y  Y    FPGA powered by USB 5V via onboard 3.3V regulator; regulator output also supplied to CONN2
+EXT  Y  Y    FPGA powered by CONN2 5V via onboard 3.3V regulator; regulator output also supplied to CONN2
+ALL  Y  Y    FPGA powered by USB 5V via onboard 3.3V regulator; regulator output and USB 5V also supplied to CONN2
+
+Configurations marked "-" should not be used.
+
+
+CONN2 NOTES
+-----------
+
+Most of the signals on CONN2 are general-purpose, but a couple of them have
+special functions which must be honoured:
+
+P144:
+  This is HSWAPEN: it is pulled high by the FPGA during configuration,
+  disabling the I/O pull-ups on most of the user I/O. Explicitly pulling it
+  low enables the pull-ups on most user I/O (see Xilinx UG380 table 5.2 for
+  exceptions).
+
+P39:
+  This is INIT_B: it is an open-drain output during configuration. It will be
+  driven low in the event of a CRC error when booting from flash. There is a
+  current-limiting series resistor R11 which is intended to protect the
+  hardware in the event that the external hardware drives it high during
+  configuration. R11's value is undefined in the BOM: you need to think about
+  an appropriate value for your application.
+
++5V & +3.3V:
+  These may be either power sources or power sinks. When designing external
+  hardware to be connected to CONN2 you need to be very clear about this, and
+  set the power jumpers appropriately.
+
+GND:
+  When designing external hardware, use all the available grounds.
+
+
+FX2 EEPROM ISOLATION JUMPER
+---------------------------
+
+In the event that bad firmware is loaded into the FX2's EEPROM, it will be
+necessary to isolate it by powering on the board with J1 open. The FX2 will
+enumerate as the default device (04B4:8613). At that point you can short the
+jumper again and load new firmware into the FX2's RAM, and use that to write
+the EEPROM with good firmware (or clear it so the FX2 ignores it on power-on).
+
+
+OPTIONAL COMPONENTS
+-------------------
+
+You can omit the SDRAM if you don't need it.
+
+You can omit the SD-card slot if you don't need it.
+
+You can omit the FX2's EEPROM and the FPGA's flash if you don't intend to ever
+run the board standalone (i.e you intend for the board to be always connected
+to a computer via USB and you don't mind loading FX2 firmware and
+JTAG-programming the FPGA every time you power up the board). However, you must
+not omit R5 & R6; these pull up the FX2's I2C bus; the FX2 will not enumerate
+without them.
+
+
+SUPPORT TOOLS/HDL/SOFTWARE
+--------------------------
+
+The board is designed to be used with FPGALink (http://bit.ly/fpgalink), but of
+course you're free to write your own HDL module, FX2 firmware and host-side
+library to do JTAG-programming and slave-FIFO communication over USB if you
+wish.
+
+The first time you connect the board, it will enumerate as the default FX2
+VID:PID of 04B4:8613. The first step is to use the "flcli" tool to program the
+EEPROM so the FX2 boots the FPGALink firmware on startup:
+
+  flcli -i 04b4:8613 -v 1d50:602b:0002 --eeprom=std
+
+If you have more than one board and want to address them separately, just
+increment the "0002" for subsequent boards.
+
+Now you can program the FPGA over JTAG:
+
+  flcli -v 1d50:602b:0002 -p J:A7A0A3A1:your-design.xsvf
+
+If you want to permanently load a design into the FPGA's boot flash, you can do
+so using the spi-talk design:
+
+  cd makestuff/hdlmake/apps
+  ../bin/hdlmake.py -g makestuff/spi-talk
+  cd makestuff/spi-talk/vhdl
+  ../../../../bin/hdlmake.py -t ../templates/fx2min/vhdl -b lx9r3 -p fpga
+  flcli -v 1d50:602b:0002 -p J:A7A0A3A1:fpga.xsvf
+
+You can now use the "gordon" tool to load the flash:
+
+  gordon -v 1d50:602b:0002 -t indirect:1 -w your-design.bin:0
+
+The board will subsequently boot into your design on power-up.
