@@ -11,7 +11,7 @@ zip: \
 		lx9-Mask_Back.gbs \
 		lx9-SilkS_Back.gbo \
 		README
-	zip makestuff-lx9-v1.0.zip $+
+	zip makestuff-lx9r3-$Format:%h$.zip $+
 
 front: lx9-PCB_Edges.gbr lx9.drl lx9-NPTH.drl lx9-SilkS_Front.gto lx9-Mask_Front.gts lx9-Front.gtl
 	gerbv --export=png --antialias --dpi=1200 --background=#284907 -o front.png \

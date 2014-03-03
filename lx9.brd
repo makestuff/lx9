@@ -5932,7 +5932,7 @@ $EndSHAPE3D
 $EndMODULE  MS-0805
 $TEXTPCB
 Te "KiCad Source: https://github.com/makestuff/lx9/archive/r3.tar.gz"
-nl "Checkin Hash: $Format:%h$"
+nl "Commit Hash: $Format:%h$"
 Po 45866 20866 472 472 98 0
 De 21 1 0 Normal L
 $EndTEXTPCB
